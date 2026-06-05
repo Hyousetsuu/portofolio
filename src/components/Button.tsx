@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '../utils/cn';
-import type { HTMLMotionProps } from 'framer-motion';
+
 import { motion } from 'framer-motion';
 
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
