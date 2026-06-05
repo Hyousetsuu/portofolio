@@ -181,7 +181,7 @@ export const projects: Project[] = [
     challengesSolved: [],
     outcome: "",
     skillsDemonstrated: [],
-    githubUrl: "https://github.com/Hyousetsuu",
+    githubUrl: "https://github.com/Hyousetsuu/portofolio",
     isFeatured: false
   },
   {
