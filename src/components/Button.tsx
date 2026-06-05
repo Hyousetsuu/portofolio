@@ -3,13 +3,16 @@ import { cn } from '../utils/cn';
 import type { HTMLMotionProps } from 'framer-motion';
 import { motion } from 'framer-motion';
 
-export interface ButtonProps extends HTMLMotionProps<"button"> {
+export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => {
+export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
+  ({ className, variant = 'primary', size = 'md', children, href, ...props }, ref) => {
     const baseStyles = "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent/50 disabled:opacity-50 disabled:pointer-events-none";
     
     const variants = {
@@ -25,13 +28,28 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: "h-14 px-8 text-lg"
     };
 
+    if (href) {
+      return (
+        <motion.a
+          href={href}
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className={cn(baseStyles, variants[variant], sizes[size], className)}
+          {...(props as any)}
+        >
+          {children}
+        </motion.a>
+      );
+    }
+
     return (
       <motion.button
-        ref={ref}
+        ref={ref as React.Ref<HTMLButtonElement>}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         className={cn(baseStyles, variants[variant], sizes[size], className)}
-        {...props}
+        {...(props as any)}
       >
         {children}
       </motion.button>

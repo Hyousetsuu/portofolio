@@ -94,12 +94,23 @@ export function FeaturedProjects() {
 
                 <div className="flex flex-wrap gap-4 mt-auto">
                   {project.githubUrl && project.githubUrl !== '#' && (
-                    <Button variant="outline" size="sm" onClick={() => window.open(project.githubUrl, '_blank')}>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      href={project.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       <FaGithub className="mr-2" size={16} /> Source
                     </Button>
                   )}
                   {project.liveDemoUrl && project.liveDemoUrl !== '#' && (
-                    <Button size="sm" onClick={() => window.open(project.liveDemoUrl, '_blank')}>
+                    <Button 
+                      size="sm" 
+                      href={project.liveDemoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink className="mr-2" size={16} /> Demo
                     </Button>
                   )}

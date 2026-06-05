@@ -73,12 +73,23 @@ export function ProjectDetail() {
 
             <div className="flex flex-wrap gap-4">
               {project.githubUrl && project.githubUrl !== '#' && (
-                <Button variant="outline" className="flex-1" onClick={() => window.open(project.githubUrl, '_blank')}>
+                <Button 
+                  variant="outline" 
+                  className="flex-1" 
+                  href={project.githubUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   <FaGithub size={18} className="mr-2" /> View Source
                 </Button>
               )}
               {project.liveDemoUrl && project.liveDemoUrl !== '#' && (
-                <Button className="flex-1" onClick={() => window.open(project.liveDemoUrl, '_blank')}>
+                <Button 
+                  className="flex-1" 
+                  href={project.liveDemoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   <ExternalLink size={18} className="mr-2" /> Live Demo
                 </Button>
               )}
