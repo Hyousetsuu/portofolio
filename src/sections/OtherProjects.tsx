@@ -2,11 +2,9 @@ import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
 
 export function OtherProjects() {
   const others = projects.filter(p => !p.isFeatured);
-  const navigate = useNavigate();
 
   return (
     <section className="py-24 relative">
@@ -22,52 +20,45 @@ export function OtherProjects() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {others.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => navigate(`/project/${project.id}`)}
-              className="p-6 bg-surface/50 border border-secondary/10 rounded-2xl flex flex-col h-full hover:border-secondary/30 transition-all cursor-pointer group"
-            >
-              <div className="flex justify-between items-start mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-primary">{project.title}</h3>
-                  <span className="text-xs font-semibold text-accent uppercase tracking-wider">
-                    {project.category}
-                  </span>
+          {others.map((project, index) => {
+            const destUrl = project.githubUrl !== '#' ? project.githubUrl : (project.liveDemoUrl !== '#' ? project.liveDemoUrl : '#');
+            
+            return (
+              <motion.a
+                key={project.id}
+                href={destUrl !== '#' ? destUrl : undefined}
+                target={destUrl !== '#' ? "_blank" : undefined}
+                rel={destUrl !== '#' ? "noopener noreferrer" : undefined}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="block p-6 bg-surface/50 border border-secondary/10 rounded-2xl flex flex-col h-full hover:border-secondary/30 transition-all cursor-pointer group"
+              >
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-primary group-hover:text-accent transition-colors">{project.title}</h3>
+                    <span className="text-xs font-semibold text-accent uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                  </div>
+                  <div className="flex gap-3 text-secondary group-hover:text-primary transition-colors">
+                    {project.githubUrl && project.githubUrl !== '#' && (
+                      <div className="z-10 relative">
+                        <FaGithub size={20} />
+                      </div>
+                    )}
+                    {project.liveDemoUrl && project.liveDemoUrl !== '#' && (
+                      <div className="z-10 relative">
+                        <ExternalLink size={20} />
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="flex gap-3 text-secondary">
-                  {project.githubUrl && project.githubUrl !== '#' && (
-                    <a 
-                      href={project.githubUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      onClick={(e) => e.stopPropagation()}
-                      className="hover:text-primary transition-colors z-10 relative"
-                    >
-                      <FaGithub size={20} />
-                    </a>
-                  )}
-                  {project.liveDemoUrl && project.liveDemoUrl !== '#' && (
-                    <a 
-                      href={project.liveDemoUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      onClick={(e) => e.stopPropagation()}
-                      className="hover:text-primary transition-colors z-10 relative"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  )}
-                </div>
-              </div>
 
-              <p className="text-sm text-secondary mb-6 flex-grow">
-                {project.description}
-              </p>
+                <p className="text-sm text-secondary mb-6 flex-grow">
+                  {project.description}
+                </p>
 
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.technologies.slice(0, 4).map((tech) => (
@@ -84,8 +75,9 @@ export function OtherProjects() {
                   </span>
                 )}
               </div>
-            </motion.div>
-          ))}
+            </motion.a>
+          );
+        })}
         </div>
       </div>
     </section>
