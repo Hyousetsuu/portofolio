@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-accent: var(--accent-color);
+  --color-accent-secondary: var(--accent-secondary-color);
+}
+
+:root {
+  --bg-color: #F8FAFC;
+  --surface-color: #FFFFFF;
+  --primary-color: #020617;
+  --secondary-color: #475569;
+  --accent-color: #2563EB;
+  --accent-secondary-color: #7C3AED; /* violet-600 for light mode contrast */
+}
+
+.dark {
+  --bg-color: #020617;
+  --surface-color: #0F172A;
+  --primary-color: #F8FAFC;
+  --secondary-color: #94A3B8;
+  --accent-color: #3B82F6;
+  --accent-secondary-color: #8B5CF6; /* violet-500 */
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    @apply antialiased transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background-color: color-mix(in srgb, var(--surface-color) 70%, transparent);
+    backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in srgb, var(--surface-color) 20%, transparent);
+    @apply shadow-sm;
+  }
+}
