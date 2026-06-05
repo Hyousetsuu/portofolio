@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export function OtherProjects() {
   const others = projects.filter(p => !p.isFeatured);
+  const navigate = useNavigate();
 
   return (
     <section className="py-24 relative">
@@ -27,7 +29,8 @@ export function OtherProjects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 bg-surface/50 border border-secondary/10 rounded-2xl flex flex-col h-full hover:border-secondary/30 transition-colors"
+              onClick={() => navigate(`/project/${project.id}`)}
+              className="p-6 bg-surface/50 border border-secondary/10 rounded-2xl flex flex-col h-full hover:border-secondary/30 transition-all cursor-pointer group"
             >
               <div className="flex justify-between items-start mb-4">
                 <div>
@@ -38,12 +41,24 @@ export function OtherProjects() {
                 </div>
                 <div className="flex gap-3 text-secondary">
                   {project.githubUrl && project.githubUrl !== '#' && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                    <a 
+                      href={project.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:text-primary transition-colors z-10 relative"
+                    >
                       <FaGithub size={20} />
                     </a>
                   )}
                   {project.liveDemoUrl && project.liveDemoUrl !== '#' && (
-                    <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                    <a 
+                      href={project.liveDemoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={(e) => e.stopPropagation()}
+                      className="hover:text-primary transition-colors z-10 relative"
+                    >
                       <ExternalLink size={20} />
                     </a>
                   )}

@@ -142,7 +142,7 @@ export const projects: Project[] = [
     challengesSolved: [],
     outcome: "",
     skillsDemonstrated: [],
-    githubUrl: "#",
+    githubUrl: "https://github.com/Hyousetsuu",
     isFeatured: false
   },
   {
@@ -155,7 +155,7 @@ export const projects: Project[] = [
     challengesSolved: [],
     outcome: "",
     skillsDemonstrated: [],
-    githubUrl: "#",
+    githubUrl: "https://github.com/Hyousetsuu",
     isFeatured: false
   },
   {
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     challengesSolved: [],
     outcome: "",
     skillsDemonstrated: [],
-    githubUrl: "#",
+    githubUrl: "https://github.com/Hyousetsuu",
     isFeatured: false
   },
   {
