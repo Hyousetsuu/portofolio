@@ -26,27 +26,6 @@ export const projectCategories = [
 export const projects: Project[] = [
   // --- FEATURED PROJECTS ---
   {
-    id: "arkyn-mobile",
-    title: "Arkyn Mobile Application",
-    category: "Mobile Development",
-    description: "A mobile application for discovering, tracking, and managing video game wishlists. Built with Flutter and Firebase.",
-    overview: "Arkyn is a comprehensive mobile platform developed to empower gamers by providing a centralized hub for discovering new titles, managing personal wishlists, and maintaining dynamic user profiles synchronized through a cloud backend.",
-    technologies: ["Flutter", "Firebase", "Dart"],
-    challengesSolved: [
-      "Implemented robust real-time data synchronization across multiple devices without causing UI stutter.",
-      "Secured user data and authenticated sessions reliably using Firebase Authentication."
-    ],
-    outcome: "Delivered a responsive mobile application with an intuitive user experience, successfully handling concurrent cloud data operations securely.",
-    skillsDemonstrated: [
-      "Mobile Architecture",
-      "NoSQL Database Design",
-      "State Management"
-    ],
-    githubUrl: "https://github.com/Hyousetsuu/PBO-Arkyn",
-    image: "/arykn-preview.png",
-    isFeatured: true
-  },
-  {
     id: "video-game-sales",
     title: "Video Game Sales Prediction",
     category: "Machine Learning",
@@ -65,6 +44,49 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/Hyousetsuu/game-popularity-prediction",
     image: "/gamesales-preview.png",
+    isFeatured: true
+  },
+  {
+    id: "telegram-ai-assistant",
+    title: "Telegram AI Assistant",
+    category: "Python / AI",
+    description: "A multi-functional Telegram bot powered by Google Gemini AI, featuring media downloaders, file processing, and real-time APIs.",
+    overview: "A comprehensive AI-powered Telegram assistant designed to be an all-in-one productivity tool. It integrates Google's Gemini AI for natural conversations, OpenWeatherMap for real-time weather, and various external libraries for social media downloading and complex file manipulations.",
+    technologies: ["Python", "Telegram Bot API", "Google Gemini API", "OpenWeatherMap API", "yt-dlp"],
+    challengesSolved: [
+      "Integrated multiple disparate REST APIs (Gemini, Weather, News) into a single cohesive chat interface.",
+      "Handled complex file processing and media downloading within Telegram's strict file size limits."
+    ],
+    outcome: "Successfully deployed a live, multi-functional Telegram bot currently serving active users with automation workflows.",
+    skillsDemonstrated: [
+      "API Integration",
+      "Backend Architecture",
+      "Automation Workflows"
+    ],
+    githubUrl: "https://github.com/Hyousetsuu/telegram-bot",
+    liveDemoUrl: "https://t.me/JKW48_Bot",
+    image: "/telegram-preview.png",
+    isFeatured: true
+  },
+  {
+    id: "arkyn-mobile",
+    title: "Arkyn Mobile Application",
+    category: "Mobile Development",
+    description: "A mobile application for discovering, tracking, and managing video game wishlists. Built with Flutter and Firebase.",
+    overview: "Arkyn is a comprehensive mobile platform developed to empower gamers by providing a centralized hub for discovering new titles, managing personal wishlists, and maintaining dynamic user profiles synchronized through a cloud backend.",
+    technologies: ["Flutter", "Firebase", "Dart"],
+    challengesSolved: [
+      "Implemented robust real-time data synchronization across multiple devices without causing UI stutter.",
+      "Secured user data and authenticated sessions reliably using Firebase Authentication."
+    ],
+    outcome: "Delivered a responsive mobile application with an intuitive user experience, successfully handling concurrent cloud data operations securely.",
+    skillsDemonstrated: [
+      "Mobile Architecture",
+      "NoSQL Database Design",
+      "State Management"
+    ],
+    githubUrl: "https://github.com/Hyousetsuu/PBO-Arkyn",
+    image: "/arykn-preview.png",
     isFeatured: true
   },
   {
