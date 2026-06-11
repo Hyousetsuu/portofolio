@@ -7,7 +7,7 @@ export const personalInfo = {
     "I am driven by a continuous desire to learn and build tools that solve genuine problems. Whether it's training a new model or optimizing a React component, I approach every challenge as an opportunity to refine my craft."
   ],
   avatar: "/profile.png", // Will be replaced by placeholder component if empty
-  resume: "/resume.pdf", // Placeholder path
+  resume: "/Resume-LintangWahyu-2026.pdf", // Placeholder path
   github: "https://github.com/Hyousetsuu",
   githubName: "Hyousetsuu",
   linkedin: "https://www.linkedin.com/in/lintang-wahyu-42a333245",
