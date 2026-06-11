@@ -31,7 +31,7 @@ export function Hero() {
               <Button onClick={() => window.location.href='#projects'}>
                 View Projects <ArrowRight className="ml-2" size={18} />
               </Button>
-              <Button variant="outline" onClick={() => window.open(personalInfo.resume, '_blank')}>
+              <Button variant="outline" href={personalInfo.resume} target="_blank" rel="noopener noreferrer">
                 Download Resume <Download className="ml-2" size={18} />
               </Button>
             </div>
