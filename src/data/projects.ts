@@ -47,6 +47,28 @@ export const projects: Project[] = [
     isFeatured: true
   },
   {
+    id: "aiko-ai",
+    title: "Aiko AI – Smart Assistant Chatbot",
+    category: "Generative AI Web Application",
+    description: "An intelligent AI-powered assistant featuring multi-modal conversations, media downloading, and advanced file-processing utilities.",
+    overview: "Designed and developed an intelligent AI-powered assistant using a modern React frontend and a modular MVC backend architecture with Node.js and Express. Integrated Google Gemini along with multiple external services to provide AI conversations, media downloading capabilities, real-time weather information, RSS-based news aggregation, and document discussion features for PDF and TXT files. Implemented standalone file-processing utilities including image compression, PDF compression, image-to-PDF conversion, and PDF-to-image conversion while prioritizing performance and user privacy.",
+    technologies: ["React", "Vite", "Node.js", "Express", "Google Gemini API", "Bootstrap", "REST API", "Framer Motion"],
+    challengesSolved: [
+      "Integrated Google Gemini along with multiple external APIs into a unified conversational interface.",
+      "Engineered standalone file-processing utilities directly within the application for advanced document and image manipulation."
+    ],
+    outcome: "Successfully deployed a robust AI assistant that enhances user productivity through intelligent conversations and comprehensive file management.",
+    skillsDemonstrated: [
+      "Full-Stack Development",
+      "Artificial Intelligence",
+      "API Integration",
+      "Software Engineering"
+    ],
+    githubUrl: "https://github.com/Hyousetsuu/Aiko.AI",
+    image: "/aiko-preview.png",
+    isFeatured: true
+  },
+  {
     id: "telegram-ai-assistant",
     title: "Telegram AI Assistant",
     category: "Python / AI",
@@ -131,6 +153,7 @@ export const projects: Project[] = [
     image: "/e-commerce-preview.png",
     isFeatured: true
   },
+  // --- OTHER PROJECTS (SECONDARY) ---
   {
     id: "library-management",
     title: "Library Management System",
@@ -150,10 +173,8 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/Hyousetsuu/library-app",
     image: "/library-preview.png",
-    isFeatured: true
+    isFeatured: false
   },
-
-  // --- OTHER PROJECTS (SECONDARY) ---
   {
     id: "daily-activity-notes",
     title: "Daily Activity Notes App",
