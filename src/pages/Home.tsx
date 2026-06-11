@@ -5,6 +5,7 @@ import { FeaturedTechnologies } from '../sections/FeaturedTechnologies';
 import { About } from '../sections/About';
 import { Education } from '../sections/Education';
 import { WhatIBuild } from '../sections/WhatIBuild';
+import { Skills } from '../sections/Skills';
 import { FeaturedProjects } from '../sections/FeaturedProjects';
 import { OtherProjects } from '../sections/OtherProjects';
 import { CurrentlyLearning } from '../sections/CurrentlyLearning';
@@ -17,13 +18,14 @@ export function Home() {
         <title>{personalInfo.name} | Portfolio</title>
         <meta name="description" content={personalInfo.role} />
       </Helmet>
-      
+
       <main>
         <Hero />
         <FeaturedTechnologies />
         <About />
         <Education />
         <WhatIBuild />
+        {/* <Skills /> */}
         <FeaturedProjects />
         <OtherProjects />
         <CurrentlyLearning />

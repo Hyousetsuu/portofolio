@@ -150,7 +150,7 @@ export function Contact() {
                   rows={5}
                   placeholder="How can I help you?"
                   className={cn(
-                    "w-full px-4 py-3 rounded-lg bg-surface border transition-colors focus:outline-none focus:ring-2 resize-y",
+                    "w-full px-4 py-3 rounded-lg bg-surface border transition-colors focus:outline-none focus:ring-2 resize-none",
                     errors.message ? "border-red-500 focus:ring-red-500" : "border-secondary/20 focus:border-accent focus:ring-accent/50"
                   )}
                   {...register("message")}

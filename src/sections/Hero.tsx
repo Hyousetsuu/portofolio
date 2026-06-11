@@ -4,6 +4,8 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Button } from '../components/Button';
 import { personalInfo } from '../data/personalInfo';
 
+import { TypeAnimation } from 'react-type-animation';
+
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden" id="home">
@@ -23,9 +25,22 @@ export function Hero() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-primary mb-6">
               {personalInfo.name}
             </h1>
-            <p className="text-xl md:text-2xl text-secondary mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-              {personalInfo.role}
-            </p>
+            <div className="text-xl md:text-2xl text-secondary mb-8 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed min-h-[60px] md:min-h-[40px]">
+              <TypeAnimation
+                sequence={[
+                  "I build Machine Learning Models",
+                  2000,
+                  "I build Modern Web Apps",
+                  2000,
+                  "I build IoT Systems",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="text-accent"
+              />
+            </div>
             
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-12">
               <Button onClick={() => window.location.href='#projects'}>

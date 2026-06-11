@@ -33,6 +33,25 @@
     color: var(--primary-color);
     @apply antialiased transition-colors duration-300;
   }
+
+  /* Custom Scrollbar for the whole page and textareas */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--secondary-color) 40%, transparent);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+  }
 }
 
 @layer utilities {
