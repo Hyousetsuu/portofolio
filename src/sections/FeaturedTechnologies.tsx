@@ -15,19 +15,26 @@ const coreTechnologies = [
 
 export function FeaturedTechnologies() {
   return (
-    <section className="py-12 border-b border-secondary/10 bg-surface/30">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+    <section className="py-8 border-b border-secondary/10 bg-surface/30 relative overflow-hidden flex items-center">
+      {/* Edge Fades for a polished look */}
+      <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+      
+      <div className="w-full flex">
         <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
+          className="flex items-center gap-4 md:gap-6 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            ease: "linear",
+            duration: 30, // Adjust this to make it faster or slower
+            repeat: Infinity,
+          }}
         >
-          {coreTechnologies.map((tech) => (
+          {/* We duplicate the array 4 times to ensure it covers wide screens and loops seamlessly */}
+          {[...coreTechnologies, ...coreTechnologies, ...coreTechnologies, ...coreTechnologies].map((tech, index) => (
             <div 
-              key={tech}
-              className="px-4 py-2 bg-secondary/5 border border-secondary/10 text-secondary text-sm font-medium rounded-md hover:border-secondary/30 transition-colors cursor-default"
+              key={`${tech}-${index}`}
+              className="px-6 py-3 bg-secondary/5 border border-secondary/20 text-secondary text-sm md:text-base font-semibold rounded-2xl hover:bg-accent/10 hover:text-accent hover:border-accent/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 cursor-default whitespace-nowrap"
             >
               {tech}
             </div>

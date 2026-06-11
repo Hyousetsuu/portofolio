@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 import { ExternalLink, ImageIcon } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { cn } from '../utils/cn';
@@ -12,18 +13,29 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, onClick, className }: ProjectCardProps) {
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      whileHover={{ y: -5 }}
-      onClick={onClick}
-      className={cn(
-        "glass group cursor-pointer overflow-hidden rounded-2xl flex flex-col h-full",
-        className
-      )}
+    <Tilt
+      tiltMaxAngleX={5}
+      tiltMaxAngleY={5}
+      scale={1.02}
+      transitionSpeed={2000}
+      className="h-full rounded-2xl"
+      glareEnable={true}
+      glareMaxOpacity={0.15}
+      glareColor="#ffffff"
+      glarePosition="all"
+      glareBorderRadius="1rem"
     >
+      <motion.div
+        layout
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        onClick={onClick}
+        className={cn(
+          "glass group cursor-pointer overflow-hidden rounded-2xl flex flex-col h-full border border-secondary/10 hover:border-accent/30 transition-colors duration-500",
+          className
+        )}
+      >
       <div className="relative aspect-video bg-secondary/10 overflow-hidden flex items-center justify-center">
         {project.image ? (
           <img 
@@ -95,5 +107,6 @@ export function ProjectCard({ project, onClick, className }: ProjectCardProps) {
         </div>
       </div>
     </motion.div>
+    </Tilt>
   );
 }
