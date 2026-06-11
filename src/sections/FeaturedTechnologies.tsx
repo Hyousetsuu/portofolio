@@ -17,8 +17,8 @@ export function FeaturedTechnologies() {
   return (
     <section className="py-8 border-b border-secondary/10 bg-surface/30 relative overflow-hidden flex items-center">
       {/* Edge Fades for a polished look */}
-      <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
       
       <div className="w-full flex">
         <motion.div 
