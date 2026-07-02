@@ -1,45 +1,86 @@
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
-const coreTechnologies = [
+const coreTech = [
   "React",
-  "Flutter",
-  "PHP",
-  "Java",
+  "Node.js",
   "Python",
-  "MySQL",
+  "Flutter"
+];
+
+const supportingTech = [
+  "TypeScript",
+  "Express",
+  "MongoDB",
   "Firebase",
-  "Arduino",
+  "Scikit-learn",
   "ESP32",
-  "Scikit-learn"
+  "Arduino",
+  "REST APIs"
 ];
 
 export function FeaturedTechnologies() {
   return (
-    <section className="py-8 border-b border-secondary/10 bg-surface/30 relative overflow-hidden flex items-center">
-      {/* Edge Fades for a polished look */}
-      <div className="absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-      
-      <div className="w-full flex">
-        <motion.div 
-          className="flex items-center gap-4 md:gap-6 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            ease: "linear",
-            duration: 30, // Adjust this to make it faster or slower
-            repeat: Infinity,
-          }}
+    <section className="py-16 bg-surface/30">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
+        
+        {/* Header & Core Technologies */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-6"
         >
-          {/* We duplicate the array 4 times to ensure it covers wide screens and loops seamlessly */}
-          {[...coreTechnologies, ...coreTechnologies, ...coreTechnologies, ...coreTechnologies].map((tech, index) => (
-            <div 
-              key={`${tech}-${index}`}
-              className="px-6 py-3 bg-secondary/5 border border-secondary/20 text-secondary text-sm md:text-base font-semibold rounded-2xl hover:bg-accent/10 hover:text-accent hover:border-accent/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 cursor-default whitespace-nowrap"
-            >
-              {tech}
-            </div>
-          ))}
+          <h4 className="text-sm font-medium text-accent tracking-[0.2em] uppercase mb-2">
+            Engineering Stack
+          </h4>
+          <h2 className="text-2xl font-semibold text-primary">Core Technologies</h2>
         </motion.div>
+
+        <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10">
+          {coreTech.map((item, index) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="flex items-center gap-3"
+            >
+              <ArrowRight size={16} className="text-accent shrink-0" />
+              <span className="text-lg text-primary font-medium">{item}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Supporting Technologies */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-6"
+        >
+          <h3 className="text-2xl font-semibold text-primary">Supporting Technologies</h3>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 gap-x-8 gap-y-2.5">
+          {supportingTech.map((item, index) => (
+            <motion.div
+              key={item}
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="flex items-center gap-3"
+            >
+              <ArrowRight size={14} className="text-secondary/50 shrink-0" />
+              <span className="text-base text-secondary">{item}</span>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

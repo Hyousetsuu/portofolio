@@ -61,4 +61,12 @@
     border: 1px solid color-mix(in srgb, var(--surface-color) 20%, transparent);
     @apply shadow-sm;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

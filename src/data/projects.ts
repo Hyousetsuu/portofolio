@@ -26,6 +26,37 @@ export const projectCategories = [
 export const projects: Project[] = [
   // --- FEATURED PROJECTS ---
   {
+    id: "ecommerce-platform",
+    title: "E-Commerce Platform",
+    category: "Web Development",
+    description: "A full-stack e-commerce platform featuring a modern React frontend and a scalable Express.js backend.",
+    overview: "Designed and developed a full-stack e-commerce platform featuring a modern React frontend and a scalable Express.js backend. The application evolved from a frontend-only prototype into a production-style web application with secure authentication, persistent database storage, and a complete shopping workflow.",
+    technologies: ["React", "Vite", "Node.js", "Express.js", "MongoDB Atlas", "Mongoose", "JWT", "Zustand", "Axios", "REST API"],
+    challengesSolved: [
+      "Built a complete Express.js backend using a modular MVC architecture with RESTful APIs for authentication, products, carts, wishlists, orders, and reviews.",
+      "Integrated MongoDB Atlas with Mongoose and implemented a database seeding system to migrate product data into the database.",
+      "Implemented secure JWT-based authentication with bcrypt password hashing, replacing the previous localStorage-based authentication system.",
+      "Developed persistent Shopping Cart and Wishlist functionality synchronized with the backend while maintaining localStorage support for guest users.",
+      "Built a complete Checkout and Order History system with unique order IDs, immutable product snapshots, automatic stock management, and purchase history.",
+      "Implemented a dynamic Reviews and Ratings system where authenticated users can submit reviews, while average ratings and review counts are calculated automatically.",
+      "Refactored the frontend using a dedicated Service Layer with Axios to separate API communication from UI components, improving maintainability and scalability.",
+      "Improved application security by configuring environment variable management, Git secret protection, and proper .gitignore practices."
+    ],
+    outcome: "Successfully transitioned the application into a complete, secure, and production-style full-stack system following modern web development patterns and best practices.",
+    skillsDemonstrated: [
+      "Full-stack architecture with React + Express + MongoDB",
+      "Secure JWT authentication and authorization",
+      "Persistent shopping cart and wishlist",
+      "Real checkout and order management system",
+      "Dynamic product reviews and rating aggregation",
+      "Clean API architecture following MVC principles",
+      "MongoDB Atlas cloud database integration"
+    ],
+    githubUrl: "https://github.com/Hyousetsuu/Kirei-Commerce",
+    image: "/e-commerce-preview.png",
+    isFeatured: true
+  },
+  {
     id: "video-game-sales",
     title: "Video Game Sales Prediction",
     category: "Machine Learning",
@@ -130,27 +161,6 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/Hyousetsuu/smartled-web",
     image: "/led-preview.png",
-    isFeatured: true
-  },
-  {
-    id: "ecommerce-platform",
-    title: "E-Commerce Platform",
-    category: "Web Development",
-    description: "A modern e-commerce web application featuring product browsing, search functionality, and shopping workflows.",
-    overview: "A scalable frontend implementation for an e-commerce platform focusing on responsive design, state management for cart operations, and rapid rendering using modern React patterns.",
-    technologies: ["React", "JavaScript", "Zustand", "Tailwind CSS", "REST API"],
-    challengesSolved: [
-      "Managed complex global state for the shopping cart and checkout flow using Zustand.",
-      "Integrated REST APIs securely for product data fetching and search functionality."
-    ],
-    outcome: "Created a fast, accessible web storefront demonstrating modern React component architecture and robust state management.",
-    skillsDemonstrated: [
-      "Frontend Architecture",
-      "Global State Management",
-      "Responsive UI Design"
-    ],
-    githubUrl: "https://github.com/Hyousetsuu/Kirei-Commerce",
-    image: "/e-commerce-preview.png",
     isFeatured: true
   },
   // --- OTHER PROJECTS (SECONDARY) ---
